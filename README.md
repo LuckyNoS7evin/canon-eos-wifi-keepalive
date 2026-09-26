@@ -42,5 +42,7 @@ journalctl --user -u eos-wifi-keepalive -f    # logs
 ## Status
 - Confirmed on an EOS M50 (2026-09-26): discovery, pairing, and keep-awake. Without the tool the camera used to sleep
   after about 5 minutes; with it, it stays on.
-- Once paired, the camera accepts reconnections without asking again (confirmed via the service).
-- Not yet tested: runs longer than 30 minutes, and reconnecting after the camera is power-cycled.
+- Once paired, the camera accepts reconnections without asking again.
+- Power cycle: when the camera is switched off, the drop is detected immediately. When it comes back, the service
+  reconnects about 25 s later on its own, with no prompt.
+- Not yet tested: runs longer than 30 minutes.
