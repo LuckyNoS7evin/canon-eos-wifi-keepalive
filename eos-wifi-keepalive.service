@@ -1,0 +1,11 @@
+[Unit]
+Description=Keep a Canon EOS camera awake over Wi-Fi (PTP/IP remote session)
+After=network-online.target
+
+[Service]
+ExecStart=%h/.local/bin/eos_wifi_keepalive.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
